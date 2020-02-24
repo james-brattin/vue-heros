@@ -1,11 +1,22 @@
 <template>
 <div>
-  <ul v-if="heros && heros.length">
-    <li v-for="hero of heros" v-bind:key="hero.id">
-      <p><strong>{{hero.name}}</strong></p>
-      <p>{{hero.description}}</p>
-    </li>
-  </ul>
+  <div v-if="heros && heros.length">
+    <div v-for="hero of heros" v-bind:key="hero.id">
+      <v-card
+      class="mx-auto"
+      max-width="344"
+      outlined
+      >
+      <v-card-title>{{hero.name}}</v-card-title>
+      <v-card-text>{{hero.description}}</v-card-text>
+
+      <v-card-actions>
+        <v-btn text>Edit</v-btn>
+        <v-btn text>Delete</v-btn>
+      </v-card-actions>
+    </v-card>
+  </div>
+  </div>
 
   <ul v-if="errors && errors.length">
     <li v-for="error of errors" v-bind:key="error.id">
