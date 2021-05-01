@@ -1,9 +1,6 @@
 <template>
   <v-app id="inspire">
-    <v-navigation-drawer
-      v-model="drawer"
-      app
-    >
+    <v-navigation-drawer v-model="drawer" app>
       <v-list dense>
         <v-list-item link>
           <v-list-item-action>
@@ -24,55 +21,42 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar
-      app
-      color="indigo"
-      dark
-    >
+    <v-app-bar app color="indigo" dark>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
       <v-toolbar-title>Application</v-toolbar-title>
     </v-app-bar>
 
     <v-content>
-      <v-container
-        class="fill-height"
-        fluid
-      >
-        <v-row
-          align="center"
-          justify="center"
-        >
+      <v-container class="fill-height" fluid>
+        <v-row align="center" justify="center">
           <v-col class="text-center">
-            <Dashboard/>
+            <Dashboard />
           </v-col>
         </v-row>
       </v-container>
     </v-content>
-    <v-footer
-      color="indigo"
-      app
-    >
+    <v-footer color="indigo" app>
       <span class="white--text">&copy; 2019</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
-import Dashboard from './components/Dashboard.vue'
+import Dashboard from "./components/Dashboard.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    Dashboard
+    Dashboard,
   },
   props: {
-      source: String
-      },
+    source: String,
+  },
   data: () => ({
     drawer: false,
   }),
-  created () {
-      this.$vuetify.theme.dark = true
-    }
+  created() {
+    this.$vuetify.theme.dark = true;
+  },
 };
 </script>
